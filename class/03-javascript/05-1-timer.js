@@ -6,7 +6,7 @@ const timer = () => {
 
   setInterval(() => {
     if (count > 0) {
-      count = count - 0;
+      count = count - 1;
       document.getElementById("count").innerText = count;
     }
     if (count === 0) {

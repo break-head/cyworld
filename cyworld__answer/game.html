@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="styles/game.css" rel="stylesheet" />
+    <script>
+      const startWord = () => {
+        const word = document.getElementById("word").innerText;
+        const lastword = word[word.length - 1];
+        const myword = document.getElementById("myword").value;
+        const firstWord = myword[0];
+
+        if (lastword === firstWord) {
+          document.getElementById("result").innerText = "정답입니다!";
+          document.getElementById("word").innerText = myword;
+          document.getElementById("myword").value = "";
+          document.getElementById("result").innerText = "";
+        } else {
+          document.getElementById("result").innerText = "땡!";
+        }
+      };
+    </script>
+    <title>game</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="wrapper__header">
+        <span class="title">GAME</span>
+        <span class="subtitle">TODAY CHOICE</span>
+      </div>
+      <div class="wrapper__body">
+        <div class="wrapper__word">
+          <img class="wrapper__word__img" src="images/word.png" />
+          <div class="wrapper__word__title">끝말잇기</div>
+          <div class="wrapper__word__subtitle">
+            제시어 :<span id="word">코드캠프</span>
+          </div>
+          <div class="wrapper__word__button">
+            <input
+              id="myword"
+              class="wrapper__word__input"
+              type="text"
+              placeholder="단어를 입력하세요."
+            />
+            <button class="wrapper__word__search" onclick="startWord()">
+              검색
+            </button>
+          </div>
+          <div id="result" class="wrapper__word__result">결과!</div>
+        </div>
+        <div class="wrapper__lotto">
+          <img class="wrapper__lotto__img" src="images/lotto.png" />
+          <div class="wrapper__lotto__title">LOTTO</div>
+          <div class="wrapper__lotto__subtitle">버튼을 누르세요.</div>
+          <div class="wrapper__lotto__box">
+            <span class="wrapper__lotto__num1">3</span>
+            <span class="wrapper__lotto__num2">5</span>
+            <span class="wrapper__lotto__num3">10</span>
+            <span class="wrapper__lotto__num4">24</span>
+            <span class="wrapper__lotto__num5">30</span>
+            <span class="wrapper__lotto__num6">34</span>
+          </div>
+          <button class="wrapper__lotto__button">Button</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
